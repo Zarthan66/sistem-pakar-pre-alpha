@@ -9,3 +9,14 @@ C:\Users\User\source\repos\Sistem Pakar\Sistem Pakar\obj\Debug\Sistem Pakar.cspr
 C:\Users\User\source\repos\Sistem Pakar\Sistem Pakar\obj\Debug\Sistem Pakar.exe
 C:\Users\User\source\repos\Sistem Pakar\Sistem Pakar\obj\Debug\Sistem Pakar.pdb
 C:\Users\User\source\repos\Sistem Pakar\Sistem Pakar\obj\Debug\Sistem_Pakar.Form1.resources
+C:\Users\User\Documents\GitHub\sistem-pakar-pre-alpha\Sistem Pakar\bin\Debug\Sistem Pakar.exe.config
+C:\Users\User\Documents\GitHub\sistem-pakar-pre-alpha\Sistem Pakar\bin\Debug\Sistem Pakar.exe
+C:\Users\User\Documents\GitHub\sistem-pakar-pre-alpha\Sistem Pakar\bin\Debug\Sistem Pakar.pdb
+C:\Users\User\Documents\GitHub\sistem-pakar-pre-alpha\Sistem Pakar\obj\Debug\Sistem Pakar.csproj.AssemblyReference.cache
+C:\Users\User\Documents\GitHub\sistem-pakar-pre-alpha\Sistem Pakar\obj\Debug\Sistem Pakar.csproj.SuggestedBindingRedirects.cache
+C:\Users\User\Documents\GitHub\sistem-pakar-pre-alpha\Sistem Pakar\obj\Debug\Sistem_Pakar.Form1.resources
+C:\Users\User\Documents\GitHub\sistem-pakar-pre-alpha\Sistem Pakar\obj\Debug\Sistem_Pakar.Properties.Resources.resources
+C:\Users\User\Documents\GitHub\sistem-pakar-pre-alpha\Sistem Pakar\obj\Debug\Sistem Pakar.csproj.GenerateResource.cache
+C:\Users\User\Documents\GitHub\sistem-pakar-pre-alpha\Sistem Pakar\obj\Debug\Sistem Pakar.csproj.CoreCompileInputs.cache
+C:\Users\User\Documents\GitHub\sistem-pakar-pre-alpha\Sistem Pakar\obj\Debug\Sistem Pakar.exe
+C:\Users\User\Documents\GitHub\sistem-pakar-pre-alpha\Sistem Pakar\obj\Debug\Sistem Pakar.pdb

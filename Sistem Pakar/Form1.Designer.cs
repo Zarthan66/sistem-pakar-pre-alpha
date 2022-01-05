@@ -86,11 +86,11 @@
             // dataPLabel
             // 
             this.dataPLabel.AutoSize = true;
-            this.dataPLabel.Location = new System.Drawing.Point(281, 17);
+            this.dataPLabel.Location = new System.Drawing.Point(264, 17);
             this.dataPLabel.Name = "dataPLabel";
-            this.dataPLabel.Size = new System.Drawing.Size(80, 13);
+            this.dataPLabel.Size = new System.Drawing.Size(97, 13);
             this.dataPLabel.TabIndex = 3;
-            this.dataPLabel.Text = "Total Diseases:";
+            this.dataPLabel.Text = "Total tipe penyakit:";
             // 
             // totalRuleTxtBox
             // 
@@ -106,10 +106,10 @@
             this.trueRadioBtn.AutoSize = true;
             this.trueRadioBtn.Location = new System.Drawing.Point(422, 85);
             this.trueRadioBtn.Name = "trueRadioBtn";
-            this.trueRadioBtn.Size = new System.Drawing.Size(47, 17);
+            this.trueRadioBtn.Size = new System.Drawing.Size(38, 17);
             this.trueRadioBtn.TabIndex = 6;
             this.trueRadioBtn.TabStop = true;
-            this.trueRadioBtn.Text = "True";
+            this.trueRadioBtn.Text = "Ya";
             this.trueRadioBtn.UseVisualStyleBackColor = true;
             // 
             // falseRadioBtn
@@ -117,10 +117,10 @@
             this.falseRadioBtn.AutoSize = true;
             this.falseRadioBtn.Location = new System.Drawing.Point(512, 85);
             this.falseRadioBtn.Name = "falseRadioBtn";
-            this.falseRadioBtn.Size = new System.Drawing.Size(50, 17);
+            this.falseRadioBtn.Size = new System.Drawing.Size(52, 17);
             this.falseRadioBtn.TabIndex = 7;
             this.falseRadioBtn.TabStop = true;
-            this.falseRadioBtn.Text = "False";
+            this.falseRadioBtn.Text = "Tidak";
             this.falseRadioBtn.UseVisualStyleBackColor = true;
             // 
             // proccedBtn
@@ -129,7 +129,7 @@
             this.proccedBtn.Name = "proccedBtn";
             this.proccedBtn.Size = new System.Drawing.Size(143, 23);
             this.proccedBtn.TabIndex = 8;
-            this.proccedBtn.Text = "Proceed";
+            this.proccedBtn.Text = "Pertanyaan Selanjutnya";
             this.proccedBtn.UseVisualStyleBackColor = true;
             this.proccedBtn.Click += new System.EventHandler(this.proccedBtn_Click);
             // 
@@ -158,11 +158,11 @@
             // resultLabel
             // 
             this.resultLabel.AutoSize = true;
-            this.resultLabel.Location = new System.Drawing.Point(419, 134);
+            this.resultLabel.Location = new System.Drawing.Point(416, 134);
             this.resultLabel.Name = "resultLabel";
-            this.resultLabel.Size = new System.Drawing.Size(40, 13);
+            this.resultLabel.Size = new System.Drawing.Size(34, 13);
             this.resultLabel.TabIndex = 11;
-            this.resultLabel.Text = "Result:";
+            this.resultLabel.Text = "Stats:";
             // 
             // button1
             // 

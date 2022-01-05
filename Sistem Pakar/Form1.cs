@@ -12,7 +12,6 @@ using System.Security;
 
 namespace Sistem_Pakar
 {
-
     public partial class Form1 : Form
     {
         Rule rule = new Rule();
@@ -48,7 +47,6 @@ namespace Sistem_Pakar
                 else if(dataset[i] == ',' && firstColumn == false)
                 {
                     rule.addSymptom(dataInput, indexRule);
-                    //totalGRow++;
                     dataInput = "";
                     firstColumn = false;
                 }
@@ -57,8 +55,6 @@ namespace Sistem_Pakar
                     rule.addSymptom(dataInput, indexRule);
                     indexRule++;
                     dataInput = "";
-                    //totalGRow++;
-                    //totalGRow = 0;
                     firstColumn = true;
                 }
                 else
@@ -73,10 +69,10 @@ namespace Sistem_Pakar
             {
                 for (int i = 0; i < rule.getDiseaseSize(); i++)
                 {
-                    ruleTextBox.AppendText(rule.getDiseaseName(i) + " = [");
-                    for (int j = 0; j < rule.getSymptomSize(i); j++)
+                    ruleTextBox.AppendText(rule.getDiseaseName(i) + " = [" + rule.getSymptomName(i, 0));
+                    for (int j = 1; j < rule.getSymptomSize(i); j++)
                     {
-                        ruleTextBox.AppendText(rule.getSymptomName(i, j));
+                        ruleTextBox.AppendText(", " + rule.getSymptomName(i, j));
                     }
                     ruleTextBox.AppendText("]");
                     ruleTextBox.AppendText(Environment.NewLine);
@@ -144,7 +140,7 @@ namespace Sistem_Pakar
             {
                 if (rule.getDiseaseStats(i) == (int)statsCondition.True)
                 {
-                    questionTextBox.AppendText("You are having " + rule.getDiseaseName(i));
+                    questionTextBox.AppendText("Anda terdiagnosa memiliki penyakit " + rule.getDiseaseName(i));
                     questionTextBox.AppendText(Environment.NewLine);
                     foundResult = true;
                     nextData = "";
@@ -163,11 +159,11 @@ namespace Sistem_Pakar
             {
                 if (nextData != "" && nextData != null)
                 {
-                    questionTextBox.AppendText("Does " + nextData + " is true?");
+                    questionTextBox.AppendText("Apakah anda mengalami gejala \"" + nextData + "\"");
                 }
                 else
                 {
-                    questionTextBox.AppendText("Cannot found the disease from dataset");
+                    questionTextBox.AppendText("Penyakit tidak ditemukan berdasarkan data yang ada");
                 }
             }
         }
@@ -388,14 +384,12 @@ namespace Sistem_Pakar
             {
                 resultTextBox.AppendText(rule.getDiseaseName(i).ToString());
                 resultTextBox.AppendText(" (" + rule.getDiseaseStats(i).ToString() + ")");
-                resultTextBox.AppendText(" = [");
-                for (int j = 0; j < rule.getSymptomSize(i); j++)
+                resultTextBox.AppendText(" = [" + rule.getSymptomStats(i, 0).ToString());
+                for (int j = 1; j < rule.getSymptomSize(i); j++)
                 {
-                    resultTextBox.AppendText(" " + rule.getSymptomStats(i, j).ToString());
+                    resultTextBox.AppendText("," + rule.getSymptomStats(i, j).ToString());
                 }
                 resultTextBox.AppendText(" ]");
-                
-                
             }
         }
     }

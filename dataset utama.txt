@@ -1,0 +1,3 @@
+Hepatitis A,Mata menguning secara keseluruhan,Urin berwarna gelap seperti warna teh,Hilang nafsu makan,Rasa lelah,Muntah,Diare jangka panjang,Nyeri pada sendi,Mencret,Pusing,Lesu,Rasa tidak enak pada tenggorokan,Air kencing kemerahan,Tinja berwarna putih keabu - abuan;
+Hepatitis B,Mata menguning secara keseluruhan,Urin berwarna gelap seperti warna teh,Hilang nafsu makan,Rasa lelah,Muntah,Diare jangka panjang,Nyeri pada sendi,Pusing,Lesu,Sakit Kepala,Demam tinggi;
+Hepatitis C,Mata menguning secara keseluruhan,Urin berwarna gelap seperti warna teh,Hilang nafsu makan,Rasa lelah,Muntah,Mencret,Berat badan turun tanpa sebab yang jelas,Mengigil,Kulit gatal pada tangan muncul bintik merah,Kembung,Nyeri perut sebelah kanan dibawah iga pinggang;
