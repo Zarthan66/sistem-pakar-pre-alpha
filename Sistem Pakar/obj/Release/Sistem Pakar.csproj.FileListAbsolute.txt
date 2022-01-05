@@ -1,0 +1,11 @@
+C:\Users\User\source\repos\Sistem Pakar\Sistem Pakar\bin\Release\Sistem Pakar.exe.config
+C:\Users\User\source\repos\Sistem Pakar\Sistem Pakar\bin\Release\Sistem Pakar.exe
+C:\Users\User\source\repos\Sistem Pakar\Sistem Pakar\bin\Release\Sistem Pakar.pdb
+C:\Users\User\source\repos\Sistem Pakar\Sistem Pakar\obj\Release\Sistem Pakar.csproj.AssemblyReference.cache
+C:\Users\User\source\repos\Sistem Pakar\Sistem Pakar\obj\Release\Sistem Pakar.csproj.SuggestedBindingRedirects.cache
+C:\Users\User\source\repos\Sistem Pakar\Sistem Pakar\obj\Release\Sistem_Pakar.Form1.resources
+C:\Users\User\source\repos\Sistem Pakar\Sistem Pakar\obj\Release\Sistem_Pakar.Properties.Resources.resources
+C:\Users\User\source\repos\Sistem Pakar\Sistem Pakar\obj\Release\Sistem Pakar.csproj.GenerateResource.cache
+C:\Users\User\source\repos\Sistem Pakar\Sistem Pakar\obj\Release\Sistem Pakar.csproj.CoreCompileInputs.cache
+C:\Users\User\source\repos\Sistem Pakar\Sistem Pakar\obj\Release\Sistem Pakar.exe
+C:\Users\User\source\repos\Sistem Pakar\Sistem Pakar\obj\Release\Sistem Pakar.pdb
