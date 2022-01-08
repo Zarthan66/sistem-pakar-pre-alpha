@@ -213,25 +213,7 @@ namespace Sistem_Pakar
                                 if (nextData == rule.getSymptomName(i, j))
                                 {    
                                     rule.setSymptomStats(i, j, (int)statsCondition.True);
-                                    
-                                    // Ketika nextdata blm ditemukan
-                                    if(newNextDataFound == false)
-                                    {
-                                        // Cek index selanjutnya tersedia untuk nextdata
-                                        if (j + 1 < rule.getSymptomSize(i))
-                                        {
-                                            for (int k = j + 1; k < rule.getSymptomSize(i); k++)
-                                            {
-                                                // Set next data
-                                                if (rule.getSymptomStats(i, k) == (int)statsCondition.Unassigned)
-                                                {
-                                                    newNextData = rule.getSymptomName(i, k);
-                                                    newNextDataFound = true;
-                                                    break;
-                                                }
-                                            }
-                                        }
-                                    }
+                                  
                                     // Setelah gejala ketemu, langsung lanjut ke penyakit selanjutnya
                                     break;
                                 }
@@ -274,25 +256,6 @@ namespace Sistem_Pakar
                                 {
                                     rule.setSymptomStats(i, j, (int)statsCondition.False);
                                     rule.setDiseaseStats(i, (int)statsCondition.False);
-
-                                    // Ketika nextdata blm ditemukan
-                                    if (newNextDataFound == false)
-                                    {
-                                        // Cek index selanjutnya tersedia untuk nextdata
-                                        if (i + 1 < rule.getDiseaseSize())
-                                        {
-                                            for (int k = 0; k < rule.getSymptomSize(i + 1); k++)
-                                            {
-                                                // Set next data
-                                                if (rule.getSymptomStats(i + 1, k) == (int)statsCondition.Unassigned)
-                                                {
-                                                    newNextData = rule.getSymptomName(i + 1, k);
-                                                    newNextDataFound = true;
-                                                    break;
-                                                }
-                                            }
-                                        }
-                                    }
                                     // Setelah gejala ketemu, langsung lanjut ke penyakit selanjutnya
                                     break;
                                 }
@@ -300,9 +263,28 @@ namespace Sistem_Pakar
                         }
                     }
                 }
+
+                for(int i = 0; i < rule.getDiseaseSize(); i++)
+                {
+                    if(rule.getDiseaseStats(i) == (int)statsCondition.Unassigned)
+                    {
+                        for(int j = 0; j < rule.getSymptomSize(i); j++)
+                        {
+                            if(rule.getSymptomStats(i,j) == (int)statsCondition.Unassigned)
+                            {
+                                // Set data yang akan di tanyakan
+                                nextData = rule.getSymptomName(i,j);
+                                newNextDataFound = true;
+                                break;
+                            }
+                        }
+                        if (newNextDataFound)
+                            break;
+                    }
+                }
                 
-                // Set data yang akan di tanyakan
-                nextData = newNextData;
+                
+                
 
                 // cek kalau ada penyakit dengan gejala semua true
                 checker();
