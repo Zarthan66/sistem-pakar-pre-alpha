@@ -15,7 +15,7 @@ namespace Sistem_Pakar
     public partial class Form1 : Form
     {
         Rule rule = new Rule();
-        // Kondisi ditemukannya penyakit yang semua gejalanya sudah terpenuhi dengan value True
+        // Kondisi ditemukannya penyakit yang semua gejalanya sudah terpenuhi value True
         bool foundResult = false;
         // nextData representasikan gejala yang dicari atau ditanyakan
         string nextData;
@@ -84,13 +84,17 @@ namespace Sistem_Pakar
             }
         }
 
-        // Mereset semua local variabel
+        // Digunakan untuk mereset ketika mengganti/membuka dataset
         private void reset()
         {
             rule.clearDiseases();
-            datasetTextBox.Text = "";
-            ruleTextBox.Text = "";
+            datasetTextBox.Clear();
+            ruleTextBox.Clear();
+            statsTextBox.Clear();
             totalRuleTxtBox.Clear();
+            questionTextBox.Clear();
+            trueRadioBtn.Checked = false;
+            falseRadioBtn.Checked = false;
         }
 
         // Membuka dataset
@@ -105,11 +109,13 @@ namespace Sistem_Pakar
                     reset();
                     var sr = new StreamReader(openFileDialog1.FileName);
                     datasetTextBox.AppendText(sr.ReadToEnd());
+
                     // Proses pemasukan dataset ke local variabel
                     readDataset();
                     totalRuleTxtBox.AppendText(rule.getDiseaseSize().ToString());
                     datasetBtn.Text = "Open Dataset";
                     datasetBtn.ForeColor = Color.Black;
+
                     // bertanya tentang gejala mulai dari gejala paling kiri atas (0,0)
                     if(rule.getDiseaseSize() > 0)
                     {
@@ -140,8 +146,9 @@ namespace Sistem_Pakar
             {
                 if (rule.getDiseaseStats(i) == (int)statsCondition.True)
                 {
-                    questionTextBox.AppendText("Anda terdiagnosa memiliki penyakit " + rule.getDiseaseName(i));
-                    questionTextBox.AppendText(Environment.NewLine);
+                    questionTextBox.AppendText("Anda terdiagnosa memiliki penyakit: ");
+                    questionTextBox.AppendText(rule.getDiseaseName(i));
+                    
                     foundResult = true;
                     nextData = "";
                 }
@@ -202,8 +209,6 @@ namespace Sistem_Pakar
                                 continue;
                             }
                         }
-
-                        
                         // Jika stats penyakit = 0 (Unassigned)
                         for (int j = 0; j < rule.getSymptomSize(i); j++)
                         {
@@ -282,10 +287,6 @@ namespace Sistem_Pakar
                             break;
                     }
                 }
-                
-                
-                
-
                 // cek kalau ada penyakit dengan gejala semua true
                 checker();
                 generateQuestion();
@@ -325,33 +326,33 @@ namespace Sistem_Pakar
 
         private void button1_Click(object sender, EventArgs e)
         {
-            resultTextBox.Clear();
+            statsTextBox.Clear();
             for (int x = 0; x < rule.getDiseaseSize(); x++)
             {
-                resultTextBox.AppendText(rule.getDiseaseName(x));
-                resultTextBox.AppendText(Environment.NewLine);
+                statsTextBox.AppendText(rule.getDiseaseName(x));
+                statsTextBox.AppendText(Environment.NewLine);
             }
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            resultTextBox.Clear();
+            statsTextBox.Clear();
             for (int y = 0; y < rule.getDiseaseSize(); y++)
             {
-                resultTextBox.AppendText("[");
+                statsTextBox.AppendText("[");
                 for (int z = 0; z < rule.getSymptomSize(y); z++)
                 {
-                    resultTextBox.Text += " " + rule.getSymptomName(y, z);
+                    statsTextBox.Text += " " + rule.getSymptomName(y, z);
 
                 }
-                resultTextBox.AppendText(" ]");
-                resultTextBox.AppendText(Environment.NewLine);
+                statsTextBox.AppendText(" ]");
+                statsTextBox.AppendText(Environment.NewLine);
             }
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            resultTextBox.Clear();
+            statsTextBox.Clear();
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -361,18 +362,24 @@ namespace Sistem_Pakar
 
         private void cekRuleStats()
         {
-            resultTextBox.Clear();
+            statsTextBox.Clear();
             for (int i = 0; i < rule.getDiseaseSize(); i++)
             {
-                resultTextBox.AppendText(rule.getDiseaseName(i).ToString());
-                resultTextBox.AppendText(" (" + rule.getDiseaseStats(i).ToString() + ")");
-                resultTextBox.AppendText(" = [" + rule.getSymptomStats(i, 0).ToString());
+                statsTextBox.AppendText(rule.getDiseaseName(i).ToString());
+                statsTextBox.AppendText(" (" + rule.getDiseaseStats(i).ToString() + ")");
+                statsTextBox.AppendText(" = [" + rule.getSymptomStats(i, 0).ToString());
                 for (int j = 1; j < rule.getSymptomSize(i); j++)
                 {
-                    resultTextBox.AppendText("," + rule.getSymptomStats(i, j).ToString());
+                    statsTextBox.AppendText("," + rule.getSymptomStats(i, j).ToString());
                 }
-                resultTextBox.AppendText(" ]");
+                statsTextBox.AppendText(" ]");
             }
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Application.Restart();
+            Environment.Exit(0);
         }
     }
 }
